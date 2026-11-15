@@ -115,44 +115,130 @@ if "results" not in st.session_state:
     st.session_state.results = None
 
 
+
 # --------------------------------------------------
 # HOME PAGE
 # --------------------------------------------------
 
 if page == "Home":
 
-    st.title("🛡️ SmartGuard")
+    st.markdown("""
+    <div style="
+        background: linear-gradient(120deg, #FFFFFF, #EFF6FF);
+        padding: 35px;
+        border-radius: 16px;
+        border: 1px solid #DBEAFE;
+        margin-bottom: 25px;
+    ">
+        <h1 style="color: #172554; font-size: 38px;">
+            🛡️ SmartGuard
+        </h1>
 
-    st.subheader(
-        "Cost-Sensitive and Explainable E-commerce Fraud Detection"
-    )
+        <h3 style="color: #2563EB;">
+            Smarter Fraud Detection. Safer E-commerce.
+        </h3>
 
-    st.write("""
-    SmartGuard is a Machine Learning based fraud detection system
-    designed to identify suspicious e-commerce transactions and
-    help reduce potential financial losses.
-    """)
+        <p style="color: #475569; font-size: 17px;">
+            Cost-Sensitive and Explainable E-commerce Fraud Detection
+            using Machine Learning.
+        </p>
 
-    st.divider()
+        <p style="color: #475569; font-size: 15px;">
+            SmartGuard identifies suspicious e-commerce transactions,
+            estimates fraud probabilities, and supports risk-based
+            decisions to help reduce potential financial losses.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Model summary
+    st.subheader("Model Overview")
 
     col1, col2, col3 = st.columns(3)
 
     col1.metric("Selected Model", "XGBoost")
-    col2.metric("Features Used", len(bundle["feature_columns"]))
+    col2.metric(
+        "Features Used",
+        len(bundle["feature_columns"])
+    )
     col3.metric("Fraud Threshold", f"{threshold:.2f}")
 
-    st.subheader("Project Overview")
+    st.divider()
 
-    st.write("""
-    SmartGuard provides the following functionality:
+    # Platform capabilities
+    st.subheader("Platform Capabilities")
 
-    - Detect potentially fraudulent transactions.
-    - Calculate fraud probabilities.
-    - Classify transactions into risk levels.
-    - Recommend suitable actions.
-    - Support cost-sensitive fraud detection.
-    """)
+    col1, col2 = st.columns(2)
 
+    with col1:
+        st.markdown("""
+        <div style="
+            background: white;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        ">
+            <h3 style="color: #1D4ED8;">🔍 Transaction Detection</h3>
+            <p style="color: #475569;">
+                Upload transaction data and identify potentially
+                fraudulent activities using the trained model.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="
+            background: white;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+        ">
+            <h3 style="color: #1D4ED8;">📊 Risk Analysis</h3>
+            <p style="color: #475569;">
+                Explore low, medium, and high-risk transactions
+                through visual summaries.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("""
+        <div style="
+            background: white;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        ">
+            <h3 style="color: #1D4ED8;">⚠️ Risk Recommendations</h3>
+            <p style="color: #475569;">
+                Receive recommended actions based on the
+                predicted transaction risk level.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="
+            background: white;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+        ">
+            <h3 style="color: #1D4ED8;">📥 Prediction Reports</h3>
+            <p style="color: #475569;">
+                Download transaction prediction results
+                for further analysis.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.divider()
+
+    st.caption(
+        "SmartGuard | Machine Learning-Based E-commerce Fraud Detection"
+    )
 
 # --------------------------------------------------
 # TRANSACTION DETECTION
