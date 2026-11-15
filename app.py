@@ -14,6 +14,69 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown("""
+<style>
+
+/* Main application background */
+.stApp {
+    background-color: #F8FAFC;
+    color: #1E293B;
+}
+
+/* Main content area */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1200px;
+}
+
+/* Main headings */
+h1, h2, h3 {
+    color: #172554;
+    font-weight: 700;
+}
+
+/* Metric cards */
+[data-testid="stMetric"] {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #1D4ED8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+}
+
+/* Button hover */
+.stButton > button:hover {
+    background-color: #1E40AF;
+    color: white;
+    border: none;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E2E8F0;
+}
+
+/* Dataframes */
+[data-testid="stDataFrame"] {
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # --------------------------------------------------
 # LOAD FINAL MODEL
 # --------------------------------------------------
