@@ -18,11 +18,13 @@ st.set_page_config(
 # LOAD FINAL MODEL
 # --------------------------------------------------
 
+from pathlib import Path
+
+MODEL_PATH = Path(__file__).parent / "smartguard_model_final.pkl"
+
 @st.cache_resource
 def load_model():
-    return joblib.load(
-        "/content/SmartGuard/smartguard_model_final.pkl"
-    )
+    return joblib.load(MODEL_PATH)
 
 bundle = load_model()
 
