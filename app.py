@@ -14,40 +14,51 @@ st.set_page_config(
     layout="wide"
 )
 
+
 st.markdown("""
 <style>
 
 /* Main application background */
 .stApp {
-    background-color: #F8FAFC;
-    color: #1E293B;
+    background-color: #0B1220;
+    color: #E2E8F0;
 }
 
 /* Main content area */
 .block-container {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    max-width: 1200px;
+    max-width: 1250px;
 }
 
-/* Main headings */
+/* Headings */
 h1, h2, h3 {
-    color: #172554;
+    color: #F8FAFC;
     font-weight: 700;
+}
+
+/* Normal text */
+p, label, .stMarkdown {
+    color: #CBD5E1;
 }
 
 /* Metric cards */
 [data-testid="stMetric"] {
-    background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background-color: #17243A;
+    border: 1px solid #263B59;
     padding: 18px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Metric values */
+[data-testid="stMetricValue"] {
+    color: #60A5FA;
 }
 
 /* Buttons */
 .stButton > button {
-    background-color: #1D4ED8;
+    background-color: #2563EB;
     color: white;
     border: none;
     border-radius: 8px;
@@ -57,25 +68,44 @@ h1, h2, h3 {
 
 /* Button hover */
 .stButton > button:hover {
-    background-color: #1E40AF;
+    background-color: #1D4ED8;
     color: white;
     border: none;
 }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E2E8F0;
+    background-color: #111C2E;
+    border-right: 1px solid #263B59;
+}
+
+/* Sidebar text */
+[data-testid="stSidebar"] * {
+    color: #E2E8F0;
 }
 
 /* Dataframes */
 [data-testid="stDataFrame"] {
-    border: 1px solid #E2E8F0;
+    border: 1px solid #263B59;
     border-radius: 10px;
+}
+
+/* File uploader */
+[data-testid="stFileUploader"] {
+    background-color: #17243A;
+    border: 1px dashed #3B82F6;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+/* Dividers */
+hr {
+    border-color: #263B59;
 }
 
 </style>
 """, unsafe_allow_html=True)
+
 
 # --------------------------------------------------
 # LOAD FINAL MODEL
