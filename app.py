@@ -58,14 +58,14 @@ if "results" not in st.session_state:
 
 
 
+
 # --------------------------------------------------
 # HOME PAGE
 # --------------------------------------------------
 
 if page == "Home":
 
-    # Main hero banner
-       st.markdown("""
+    st.markdown("""
     <div style="background-color:#17243A; padding:30px; border-radius:15px;">
         <h1 style="color:white;">🛡️ SmartGuard</h1>
         <h3 style="color:#60A5FA;">Smarter Fraud Detection. Safer E-commerce.</h3>
@@ -80,22 +80,15 @@ if page == "Home":
         </p>
     </div>
     """, unsafe_allow_html=True)
+
     # Model summary
     st.subheader("Model Overview")
 
     col1, col2, col3 = st.columns(3)
 
     col1.metric("Selected Model", "XGBoost")
-
-    col2.metric(
-        "Features Used",
-        len(bundle["feature_columns"])
-    )
-
-    col3.metric(
-        "Fraud Threshold",
-        f"{threshold:.2f}"
-    )
+    col2.metric("Features Used", len(bundle["feature_columns"]))
+    col3.metric("Fraud Threshold", f"{threshold:.2f}")
 
     st.divider()
 
@@ -105,34 +98,18 @@ if page == "Home":
     col1, col2 = st.columns(2)
 
     with col1:
-
         st.markdown("""
-        <div style="
-            background: #17243A;
-            padding: 22px;
-            border: 1px solid #263B59;
-            border-radius: 14px;
-            margin-bottom: 18px;
-        ">
-            <h3 style="color: #60A5FA;">
-                🔍 Transaction Detection
-            </h3>
-            <p style="color: #CBD5E1;">
+        <div style="background:#17243A; padding:22px; border-radius:14px;">
+            <h3 style="color:#60A5FA;">🔍 Transaction Detection</h3>
+            <p style="color:#CBD5E1;">
                 Upload transaction data and identify potentially
                 fraudulent activities using the trained model.
             </p>
         </div>
-
-        <div style="
-            background: #17243A;
-            padding: 22px;
-            border: 1px solid #263B59;
-            border-radius: 14px;
-        ">
-            <h3 style="color: #60A5FA;">
-                📊 Risk Analysis
-            </h3>
-            <p style="color: #CBD5E1;">
+        <br>
+        <div style="background:#17243A; padding:22px; border-radius:14px;">
+            <h3 style="color:#60A5FA;">📊 Risk Analysis</h3>
+            <p style="color:#CBD5E1;">
                 Explore low, medium, and high-risk transactions
                 through visual summaries.
             </p>
@@ -140,34 +117,18 @@ if page == "Home":
         """, unsafe_allow_html=True)
 
     with col2:
-
         st.markdown("""
-        <div style="
-            background: #17243A;
-            padding: 22px;
-            border: 1px solid #263B59;
-            border-radius: 14px;
-            margin-bottom: 18px;
-        ">
-            <h3 style="color: #60A5FA;">
-                ⚠️ Risk Recommendations
-            </h3>
-            <p style="color: #CBD5E1;">
+        <div style="background:#17243A; padding:22px; border-radius:14px;">
+            <h3 style="color:#60A5FA;">⚠️ Risk Recommendations</h3>
+            <p style="color:#CBD5E1;">
                 Receive recommended actions based on the
                 predicted transaction risk level.
             </p>
         </div>
-
-        <div style="
-            background: #17243A;
-            padding: 22px;
-            border: 1px solid #263B59;
-            border-radius: 14px;
-        ">
-            <h3 style="color: #60A5FA;">
-                📥 Prediction Reports
-            </h3>
-            <p style="color: #CBD5E1;">
+        <br>
+        <div style="background:#17243A; padding:22px; border-radius:14px;">
+            <h3 style="color:#60A5FA;">📥 Prediction Reports</h3>
+            <p style="color:#CBD5E1;">
                 Download transaction prediction results
                 for further analysis.
             </p>
@@ -176,9 +137,7 @@ if page == "Home":
 
     st.divider()
 
-    st.caption(
-        "SmartGuard | Machine Learning-Based E-commerce Fraud Detection"
-    )
+    st.caption("SmartGuard | Machine Learning-Based E-commerce Fraud Detection")
 
 # --------------------------------------------------
 # TRANSACTION DETECTION
