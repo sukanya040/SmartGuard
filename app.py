@@ -65,35 +65,21 @@ if "results" not in st.session_state:
 if page == "Home":
 
     # Main hero banner
-    st.markdown("""
-    <div style="
-        background: linear-gradient(120deg, #17243A, #1E3A5F);
-        padding: 40px;
-        border-radius: 18px;
-        border: 1px solid #345477;
-        margin-bottom: 28px;
-    ">
-        <h1 style="color: #FFFFFF; font-size: 42px;">
-            🛡️ SmartGuard
-        </h1>
-
-        <h3 style="color: #60A5FA;">
-            Smarter Fraud Detection. Safer E-commerce. TEST
-        </h3>
-
-        <p style="color: #E2E8F0; font-size: 17px;">
+       st.markdown("""
+    <div style="background-color:#17243A; padding:30px; border-radius:15px;">
+        <h1 style="color:white;">🛡️ SmartGuard</h1>
+        <h3 style="color:#60A5FA;">Smarter Fraud Detection. Safer E-commerce.</h3>
+        <p style="color:white;">
             Cost-Sensitive and Explainable E-commerce Fraud Detection
             using Machine Learning.
         </p>
-
-        <p style="color: #CBD5E1; font-size: 15px;">
+        <p style="color:#CBD5E1;">
             Identify suspicious transactions, estimate fraud probabilities,
             and support risk-based decisions to help reduce potential
             financial losses.
         </p>
     </div>
     """, unsafe_allow_html=True)
-
     # Model summary
     st.subheader("Model Overview")
 
