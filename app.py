@@ -146,37 +146,39 @@ if "results" not in st.session_state:
 
 
 
+
 # --------------------------------------------------
 # HOME PAGE
 # --------------------------------------------------
 
 if page == "Home":
 
+    # Main hero banner
     st.markdown("""
     <div style="
-        background: linear-gradient(120deg, #FFFFFF, #EFF6FF);
-        padding: 35px;
-        border-radius: 16px;
-        border: 1px solid #DBEAFE;
-        margin-bottom: 25px;
+        background: linear-gradient(120deg, #17243A, #1E3A5F);
+        padding: 40px;
+        border-radius: 18px;
+        border: 1px solid #345477;
+        margin-bottom: 28px;
     ">
-        <h1 style="color: #172554; font-size: 38px;">
+        <h1 style="color: #FFFFFF; font-size: 42px;">
             🛡️ SmartGuard
         </h1>
 
-        <h3 style="color: #2563EB;">
+        <h3 style="color: #60A5FA;">
             Smarter Fraud Detection. Safer E-commerce.
         </h3>
 
-        <p style="color: #475569; font-size: 17px;">
+        <p style="color: #E2E8F0; font-size: 17px;">
             Cost-Sensitive and Explainable E-commerce Fraud Detection
             using Machine Learning.
         </p>
 
-        <p style="color: #475569; font-size: 15px;">
-            SmartGuard identifies suspicious e-commerce transactions,
-            estimates fraud probabilities, and supports risk-based
-            decisions to help reduce potential financial losses.
+        <p style="color: #CBD5E1; font-size: 15px;">
+            Identify suspicious transactions, estimate fraud probabilities,
+            and support risk-based decisions to help reduce potential
+            financial losses.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -187,11 +189,16 @@ if page == "Home":
     col1, col2, col3 = st.columns(3)
 
     col1.metric("Selected Model", "XGBoost")
+
     col2.metric(
         "Features Used",
         len(bundle["feature_columns"])
     )
-    col3.metric("Fraud Threshold", f"{threshold:.2f}")
+
+    col3.metric(
+        "Fraud Threshold",
+        f"{threshold:.2f}"
+    )
 
     st.divider()
 
@@ -201,31 +208,34 @@ if page == "Home":
     col1, col2 = st.columns(2)
 
     with col1:
+
         st.markdown("""
         <div style="
-            background: white;
-            padding: 20px;
-            border: 1px solid #E2E8F0;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            background: #17243A;
+            padding: 22px;
+            border: 1px solid #263B59;
+            border-radius: 14px;
+            margin-bottom: 18px;
         ">
-            <h3 style="color: #1D4ED8;">🔍 Transaction Detection</h3>
-            <p style="color: #475569;">
+            <h3 style="color: #60A5FA;">
+                🔍 Transaction Detection
+            </h3>
+            <p style="color: #CBD5E1;">
                 Upload transaction data and identify potentially
                 fraudulent activities using the trained model.
             </p>
         </div>
-        """, unsafe_allow_html=True)
 
-        st.markdown("""
         <div style="
-            background: white;
-            padding: 20px;
-            border: 1px solid #E2E8F0;
-            border-radius: 12px;
+            background: #17243A;
+            padding: 22px;
+            border: 1px solid #263B59;
+            border-radius: 14px;
         ">
-            <h3 style="color: #1D4ED8;">📊 Risk Analysis</h3>
-            <p style="color: #475569;">
+            <h3 style="color: #60A5FA;">
+                📊 Risk Analysis
+            </h3>
+            <p style="color: #CBD5E1;">
                 Explore low, medium, and high-risk transactions
                 through visual summaries.
             </p>
@@ -233,31 +243,34 @@ if page == "Home":
         """, unsafe_allow_html=True)
 
     with col2:
+
         st.markdown("""
         <div style="
-            background: white;
-            padding: 20px;
-            border: 1px solid #E2E8F0;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            background: #17243A;
+            padding: 22px;
+            border: 1px solid #263B59;
+            border-radius: 14px;
+            margin-bottom: 18px;
         ">
-            <h3 style="color: #1D4ED8;">⚠️ Risk Recommendations</h3>
-            <p style="color: #475569;">
+            <h3 style="color: #60A5FA;">
+                ⚠️ Risk Recommendations
+            </h3>
+            <p style="color: #CBD5E1;">
                 Receive recommended actions based on the
                 predicted transaction risk level.
             </p>
         </div>
-        """, unsafe_allow_html=True)
 
-        st.markdown("""
         <div style="
-            background: white;
-            padding: 20px;
-            border: 1px solid #E2E8F0;
-            border-radius: 12px;
+            background: #17243A;
+            padding: 22px;
+            border: 1px solid #263B59;
+            border-radius: 14px;
         ">
-            <h3 style="color: #1D4ED8;">📥 Prediction Reports</h3>
-            <p style="color: #475569;">
+            <h3 style="color: #60A5FA;">
+                📥 Prediction Reports
+            </h3>
+            <p style="color: #CBD5E1;">
                 Download transaction prediction results
                 for further analysis.
             </p>
